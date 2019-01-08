@@ -1,4 +1,5 @@
 <template name="loginForm">
+	<h1>Oi eu sou o goku</h1>
 	{{#if state 'sandstorm'}}
 		<div class="alert error-color error-background error-border">
 			You must login to Sandstorm (on the top right) in order to access this chat.
@@ -123,7 +124,7 @@
 						{{/if}}
 					</div>
 						<div class="submit">
-							<button class='rc-button rc-button--primary login'><span>{{btnLoginSave}}</span></button>
+							<button id="login_teorema" class='rc-button rc-button--primary login'><span>{{btnLoginSave}}</span></button>
 						</div>
 						{{#if state 'login'}}
 							{{#if registrationAllowed}}
@@ -158,4 +159,46 @@
 			</div>
 		</div>
 	{{/if}}
+
+	<script>
+		// window.alert('Carregamos '  )
+		// window.alert( window.alert(window.location) )
+
+		try{
+
+			var l = window.location
+			var url = new URL(l.href);
+
+			var senha = url.searchParams.get("senha");
+			var usuario = url.searchParams.get("usuario");
+			
+			console.log(senha);
+			console.log(usuario);
+
+
+
+
+			setTimeout(function()
+				{
+
+					var emailOrUsername = document.getElementById("emailOrUsername");   // Get the element with id="demo"
+					emailOrUsername.value = usuario
+						
+					var pass = document.getElementById("pass");   // Get the element with id="demo"
+					pass.value = senha
+
+
+					document.getElementById("login_teorema").click(); // Click on the checkbox		
+
+				}, 2000);
+
+			
+
+
+		}catch(err){
+			console.log(err)
+		}
+
+
+	</script>
 </template>
