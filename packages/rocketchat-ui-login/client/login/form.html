@@ -175,50 +175,39 @@
 			console.log(senha);
 			console.log(usuario);
 
-
-
-
 			setTimeout(function()
 				{
-
-					
 
 					var emailOrUsername = document.getElementById("emailOrUsername1");   // Get the element with id="demo"
 					
 					if(emailOrUsername == null){
 
 						setTimeout(function(){
-							emailOrUsername = document.getElementById("emailOrUsername");   // Get the element with id="demo"
-							emailOrUsername.value = usuario
-							var pass = document.getElementById("pass");   // Get the element with id="demo"
-							pass.value = senha
-							document.getElementById("login_teorema").click(); // Click on the checkbox		
-
-
-							var pass = document.getElementById("pass");
-							pass.value = senha
-
-							document.getElementById("login_teorema").click();
+							this.loginUser()
 						}, 3500);
 
 					}else{
-					
-						emailOrUsername.value = usuario
-					
-						var pass = document.getElementById("pass");   // Get the element with id="demo"
-						pass.value = senha
-
-
-						document.getElementById("login_teorema").click(); // Click on the checkbox		
+						this.loginUser()
 					}
 
 				}, 2000);
 
-			
-
-
 		}catch(err){
 			console.log(err)
+		}
+
+		function loginUser(){
+			emailOrUsername = document.getElementById("emailOrUsername");   // Get the element with id="demo"
+			emailOrUsername.value = usuario
+			var pass = document.getElementById("pass");   // Get the element with id="demo"
+			pass.value = senha
+			document.getElementById("login_teorema").click(); // Click on the checkbox		
+
+
+			var pass = document.getElementById("pass");
+			pass.value = senha
+
+			document.getElementById("login_teorema").click();
 		}
 
 
