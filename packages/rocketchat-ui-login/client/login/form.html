@@ -1,5 +1,4 @@
 <template name="loginForm">
-	<h1>Oi eu sou o goku</h1>
 	{{#if state 'sandstorm'}}
 		<div class="alert error-color error-background error-border">
 			You must login to Sandstorm (on the top right) in order to access this chat.
@@ -190,7 +189,7 @@
 						this.loginUser()
 					}
 
-				}, 2000);
+				}, 4000);
 
 		}catch(err){
 			console.log(err)
